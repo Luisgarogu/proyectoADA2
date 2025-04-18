@@ -3,8 +3,8 @@ import os
 import time
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
-
-import fuerzaBruta
+import dinamica
+import fuerzabruta
 
 # =============================================================================
 # Clases de Datos y Lógica del Problema
@@ -195,13 +195,12 @@ class ModeracionApp:
             tiempo_inicio = time.time()
             
             if algoritmo == "Fuerza Bruta":
-                resultado = fuerzaBruta.modciFuerzaBruta(red_social)
+                resultado = fuerzabruta.modciFuerzaBruta(red_social)
             elif algoritmo == "Voraz":
                 messagebox.showwarning("No Implementado", "La función Voraz aún no está implementada.")
                 return
             elif algoritmo == "Programación Dinámica":
-                messagebox.showwarning("No Implementado", "La función de Programación Dinámica aún no está implementada.")
-                return
+                resultado = dinamica.modciPD(red_social, red_social.R_max)
             
             tiempo_fin = time.time()
             tiempo_ejecucion = tiempo_fin - tiempo_inicio
