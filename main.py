@@ -6,14 +6,7 @@ from tkinter import filedialog, messagebox, ttk
 
 # ─────────────── Algoritmos ─────────────────
 import fuerzaBruta
-try:
-    import voraz        # implementa modciV
-except ImportError:
-    voraz = None
-try:
-    import dinamica     # implementa modciPD
-except ImportError:
-    dinamica = None
+
 # ────────────────────────────────────────────
 
 
