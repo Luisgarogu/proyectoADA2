@@ -5,7 +5,8 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
 # ─────────────── Algoritmos ─────────────────
-import fuerzaBruta
+import fuerzabruta
+import voraz
 
 # ────────────────────────────────────────────
 
@@ -161,11 +162,9 @@ class ModeracionApp:
 
             t0 = time.time()
             if alg == "Fuerza Bruta":
-                estrategia, esfuerzo, CI, stats = fuerzaBruta.modciFuerzaBruta(rs)
+                estrategia, esfuerzo, CI, stats = fuerzabruta.modciFuerzaBruta(rs)
 
             elif alg == "Voraz":
-                if voraz is None:
-                    raise RuntimeError("Módulo voraz no disponible.")
                 estrategia, esfuerzo, CI, stats = voraz.modciV(rs)
 
             elif alg == "Programación Dinámica":
