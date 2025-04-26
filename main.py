@@ -168,7 +168,7 @@ class ModeracionApp:
                 estrategia, esfuerzo, CI, stats = voraz.modciV(rs)
 
             elif alg == "Programación Dinámica":
-                estrategia, esfuerzo, CI, stats = dinamica.modciPD(rs, rs.R_max)
+                estrategia, esfuerzo, CI, stats = dinamica.modciPD(rs)
             else:
                 raise ValueError("Algoritmo no reconocido")
 

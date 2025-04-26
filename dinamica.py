@@ -1,7 +1,8 @@
 import math
 
-def modciPD(red_social, R_max):
+def modciPD(red_social):
     grupos = red_social.grupos
+    R_max = red_social.R_max
     n = len(grupos)
     INF = float('inf')
 
@@ -44,5 +45,13 @@ def modciPD(red_social, R_max):
 
     #Dividir entre n grupos para obtener el conflicto interno
     conflicto_final = mejor_conflicto_total / n
+    esfuerzo_total = mejor_r
 
-    return estrategia, mejor_r, conflicto_final
+    #Estadisticas
+    stats = {
+        "Grupos moderados": sum(1 for e in estrategia if e > 0),
+        "Moderaciones totales": sum(estrategia),
+        #"Esfuerzo restante": R_max - esfuerzo_total
+    }
+
+    return estrategia, esfuerzo_total, conflicto_final, stats
