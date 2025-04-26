@@ -20,7 +20,7 @@ import math
 from typing import List, Tuple, Dict, Any
 
 
-def modciFuerzaBruta(red_social) -> Tuple[List[int], int, float, Dict[str, Any]]:
+def modciFB(red_social) -> Tuple[List[int], int, float, Dict[str, Any]]:
     """
     FUERZA BRUTA
     ------------

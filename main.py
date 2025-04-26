@@ -162,7 +162,7 @@ class ModeracionApp:
 
             t0 = time.time()
             if alg == "Fuerza Bruta":
-                estrategia, esfuerzo, CI, stats = fuerzabruta.modciFuerzaBruta(rs)
+                estrategia, esfuerzo, CI, stats = fuerzabruta.modciFB(rs)
 
             elif alg == "Voraz":
                 estrategia, esfuerzo, CI, stats = voraz.modciV(rs)
