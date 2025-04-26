@@ -5,7 +5,8 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
 # ─────────────── Algoritmos ─────────────────
-import fuerzaBruta
+import fuerzabruta
+import voraz
 
 # ────────────────────────────────────────────
 
@@ -161,17 +162,14 @@ class ModeracionApp:
 
             t0 = time.time()
             if alg == "Fuerza Bruta":
-                estrategia, esfuerzo, CI, stats = fuerzaBruta.modciFuerzaBruta(rs)
+                estrategia, esfuerzo, CI, stats = fuerzabruta.modciFB(rs)
 
             elif alg == "Voraz":
-                if voraz is None:
-                    raise RuntimeError("Módulo voraz no disponible.")
                 estrategia, esfuerzo, CI, stats = voraz.modciV(rs)
 
             elif alg == "Programación Dinámica":
                 if dinamica is None:
                     raise RuntimeError("Módulo dinamica no disponible.")
-                estrategia, esfuerzo, CI, stats = dinamica.modciPD(rs)
             else:
                 raise ValueError("Algoritmo no reconocido")
 
@@ -180,7 +178,7 @@ class ModeracionApp:
 
             # construir texto
             msg = (f"Algoritmo : {alg}\n"
-                   f"Tiempo    : {dt:.6f} s\n"
+                   f"Tiempo    : {dt*1000:.6f} ms\n"
                    f"CI final  : {CI}\n"
                    f"Esfuerzo  : {esfuerzo}\n\n"
                    "Estrategia:\n")
